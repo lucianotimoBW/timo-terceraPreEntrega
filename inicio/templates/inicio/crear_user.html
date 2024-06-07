@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block h1_header %}
+Crear usuarios
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action= {% url "crear_user" %} method="POST">
+    <div class="mb-3 form-label">
+    {% csrf_token %}
+    {{formulario}}
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+{% endblock main %}
